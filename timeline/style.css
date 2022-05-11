@@ -1,0 +1,251 @@
+@import "reset.css";
+
+/* rem root size */
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #222;
+}
+/* layout */
+.wrapper {
+  max-width: 90rem;
+  margin: 10rem auto 0;
+}
+
+/* components */
+/* header */
+
+.header {
+  height: 70vh;
+  background-image: url(images/cover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -30vh;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  font-weight: 700;
+}
+
+.subText {
+  font-size: 1.2rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 1rem 0;
+  letter-spacing: 0.8rem;
+  position: relative;
+  z-index: 10;
+}
+
+.title::before {
+  content: " ";
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2rem;
+  right: -1rem;
+  margin: auto;
+  vertical-align: bottom;
+  z-index: -10;
+  background-color: #255499;
+}
+
+/* main */
+.main {
+  padding: 0 2rem;
+}
+
+.photoshopItemBox {
+  position: relative;
+  margin: 0 -2.5rem;
+}
+
+.photoshopItemBox::before {
+  content: " ";
+  width: 0.4rem;
+  position: absolute;
+  inset: 0;
+  margin: 8.2rem auto -20rem;
+  background-color: #1c90ff;
+  transition: all 1s ease;
+}
+
+.photoshopItemWrapper {
+  width: 50%;
+  padding: 0 2.5rem;
+  position: relative;
+  margin-bottom: -3rem;
+  transition: all 1s ease;
+}
+
+.photoshopItemWrapper:nth-of-type(odd) {
+  margin-right: auto;
+}
+
+.photoshopItemWrapper:nth-of-type(even) {
+  margin-left: auto;
+}
+
+.photoshopItemWrapper::before {
+  content: " ";
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #222;
+  border: 0.4rem solid #1c90ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto -0.8rem;
+  transition: all 0.3s ease;
+}
+
+.photoshopItemWrapper:nth-child(odd)::before {
+  right: 0;
+}
+
+.photoshopItemWrapper:nth-child(even)::before {
+  left: 0;
+}
+
+.photoshopItem {
+  position: relative;
+  padding: 0;
+  background: #111;
+  border-radius: 2rem;
+  padding: 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoshopItem::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 1rem 0 1rem 0.9rem;
+  border-color: transparent #111;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: all 0.3s ease;
+}
+
+.photoshopItem.left::before {
+  right: -0.9rem;
+}
+
+.photoshopItem.right::before {
+  border-width: 1rem 0.9rem 1rem 0;
+  left: -0.9rem;
+}
+
+.topWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.psLogo {
+  width: 10rem;
+  height: 10rem;
+  margin-top: -7rem;
+}
+
+.textWrapper.left {
+  margin-left: auto;
+  text-align: right;
+  color: #fff;
+}
+
+.textWrapper.right {
+  margin-right: auto;
+  text-align: left;
+  color: #fff;
+}
+
+.textWrapper .year {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #1c90ff;
+}
+
+.textWrapper .version {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.textWrapper .version.left {
+  margin-right: 0.4rem;
+}
+
+.textWrapper .version.right {
+  margin-left: 0.4rem;
+}
+
+.skillBox {
+  background-color: #000;
+  color: #4a4a4a;
+  margin-top: 2rem;
+  padding: 1rem 2rem 2rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.skill {
+  margin-top: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skill::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  font-weight: bold;
+  background-color: #4a4a4a;
+  position: absolute;
+  left: 0;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 50rem) {
+  .photoshopItemBox::before {
+    opacity: 0;
+  }
+  .photoshopItemWrapper {
+    width: 70%;
+    margin: 10rem auto;
+  }
+  .photoshopItemWrapper::before {
+    opacity: 0;
+  }
+  .photoshopItem::before {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .psLogo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -7rem auto 0;
+  }
+  .textWrapper {
+    margin: 4rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
